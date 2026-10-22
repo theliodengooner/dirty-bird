@@ -1,0 +1,139 @@
+/* =========================================================
+   "DIRTY BIRD" STOLAS LIODEN DEN THEME 
+   Palette: Custom BG & Logo, Translucent Dark Blue, Crimson, Gold, White
+   ========================================================= */
+
+@import url('https://googleapis.com');
+
+/* --- Root Variables & Theme Colors --- */
+:root {
+  --bg-main: #06040a;             /* Fallback solid background */
+  --bg-card-blue: rgba(13, 24, 54, 0.75); /* Translucent dark blue panel */
+  --accent-gold: #e2b13c;         /* Royal Goetia gold trim */
+  --accent-crimson: #9e1b32;      /* "Blindfolded" crimson red */
+  --text-white: #ffffff;          /* Fancy white main font */
+  --text-muted: #8b9bb4;          /* Soft slate blue-grey for secondary text */
+  --border-glow: rgba(13, 24, 54, 0.6);
+}
+
+/* --- Main Background --- */
+body {
+  background-color: var(--bg-main) !important;
+  color: var(--text-white) !important;
+  font-family: 'Cinzel', 'Georgia', serif !important; /* Fancy, elegant serif font */
+  background-image: 
+    linear-gradient(180deg, rgba(6, 4, 10, 0.4) 0%, rgba(11, 7, 18, 0.6) 100%),
+    url('https://gstatic.com') !important; 
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+/* --- Custom Logo Override --- */
+/* Hides default Lioden text/logo image and scales the new Stolas preview asset */
+div.logo {
+  background-image: url('https://i.ibb.co/dwgfLSJ6/images-removebg-preview-9.png') !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: contain !important;
+  height: 160px !important; /* Adjusted to fit the character shape neatly */
+  width: 100% !important;
+}
+
+div.logo img {
+  visibility: hidden !important; /* Hides original inline image tag content */
+}
+
+/* --- Main Layout Panel & Containers --- */
+div.container.main, .panel, .table {
+  background: var(--bg-card-blue) !important; /* Dark blue & translucent */
+  backdrop-filter: blur(5px);                  /* Smooth glass-like blur effect */
+  border: 2px solid var(--accent-gold) !important; /* Elegant gold border */
+  box-shadow: 0 0 25px var(--border-glow) !important;
+  color: var(--text-white) !important;
+  font-family: 'Cinzel', 'Georgia', serif !important;
+}
+
+/* Top Accent Accentuation (The Crimson Blindfold Bar) */
+div.container.main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: var(--accent-crimson);
+  box-shadow: 0 2px 12px var(--accent-crimson);
+  z-index: 999;
+}
+
+/* --- Navigation Bar Override --- */
+.navbar, .navbar-default {
+  background-color: rgba(13, 24, 54, 0.9) !important;
+  border-bottom: 2px solid var(--accent-crimson) !important;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: var(--text-white) !important;
+  font-family: 'Cinzel', serif !important;
+  font-weight: bold;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: var(--accent-gold) !important;
+  text-shadow: 0 0 8px var(--accent-gold);
+}
+
+/* --- Headers & Typography --- */
+h1, h2, h3, .top-header {
+  color: var(--accent-gold) !important;
+  font-family: 'Cinzel', serif !important;
+  font-weight: 700;
+  text-transform: uppercase !important;
+  letter-spacing: 3px !important;
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Table header columns */
+th {
+  background-color: var(--accent-crimson) !important;
+  color: var(--text-white) !important;
+  font-family: 'Cinzel', serif !important;
+  border: 1px solid var(--accent-gold) !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+td {
+  border: 1px solid rgba(226, 177, 60, 0.2) !important;
+  color: var(--text-white) !important;
+  font-family: 'Cinzel', serif !important;
+}
+
+/* --- Custom Links --- */
+a:link, a:visited {
+  color: var(--accent-gold) !important;
+  font-family: 'Cinzel', serif !important;
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover, a:active {
+  color: var(--accent-crimson) !important;
+  text-shadow: 0 0 8px var(--accent-crimson);
+  text-decoration: none !important;
+}
+
+/* --- Cave & Mound Adjustments --- */
+.cave-grid, .mound-grid {
+  border: 1px dashed var(--accent-gold) !important;
+  background: rgba(6, 4, 10, 0.5) !important;
+}
+
+/* --- Custom Alert Blocks / Textboxes --- */
+.alert-info {
+  background-color: rgba(6, 4, 10, 0.8) !important;
+  border-left: 5px solid var(--accent-crimson) !important;
+  color: var(--text-white) !important;
+  font-style: italic;
+}
